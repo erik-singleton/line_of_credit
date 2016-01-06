@@ -1,7 +1,7 @@
 angular
   .module('login')
 
-  .directive 'logoutButton', ($state, loginService) ->
+  .directive 'logoutButton', ($state, creditLineService, loginService) ->
     restrict: 'E'
 
     scope: {}
@@ -14,4 +14,5 @@ angular
       scope.logout = ->
         loginService.logout().then ->
           $state.go('index')
+          creditLineService.get()
 

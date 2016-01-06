@@ -1,4 +1,6 @@
 class TransactionController < ApplicationController
+  before_filter :require_login
+
   def create
     begin
       credit_line = CreditLine.find_by!(user_id: @user.id, id: params[:credit_line_id])
