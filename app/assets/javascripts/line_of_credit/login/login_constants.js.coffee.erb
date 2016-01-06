@@ -1,0 +1,9 @@
+<% url_helpers = Rails.application.routes.url_helpers %>
+
+angular
+  .module('login')
+
+  .constant 'LoginConstants',
+    urls:
+      login: "<%= url_helpers.login_path %>"
+      logout: "<%= url_helpers.logout_path %>"

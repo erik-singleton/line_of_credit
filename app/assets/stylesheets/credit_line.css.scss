@@ -1,0 +1,49 @@
+@mixin breakpoint($point) {
+  @media (min-width: $point) { @content; }
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-wrapper {
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 64px;
+  z-index: 9000;
+}
+
+.login-form {
+  margin: 0 auto;
+  padding: $lg_padding 0;
+  width: 100%;
+  @include breakpoint($md_breakpoint) {
+    width: 75%;
+  }
+  @include breakpoint($lg_breakpoint) {
+    width: 50%;
+  }
+}
+
+.single-credit-line {
+  border-top: 1px solid $lightest_gray;
+  border-bottom: 1px solid $lightest_gray;
+  &:hover {
+    box-shadow: 0 0 10px $lightest_gray;
+  }
+}
+
+.light-text {
+  color: $light_gray;
+}
+
+.negative-currency {
+  color: $red;
+}
+
+.error-message {
+  color: $red;
+}
